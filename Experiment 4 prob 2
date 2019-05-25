@@ -1,0 +1,32 @@
+#include <iostream>
+#include <conio.h>
+ 
+using namespace std;
+ 
+int main()
+{
+	int a[50],ar,z,d,elem;
+	cout << "Enter Array size: ";
+	cin >> ar;
+	cout << "Enter Array elements: "; 
+	
+	for(z=0; z < ar; ++z)
+		cin >> a[z];
+		
+	for (z=1; z < ar; ++z)
+	{
+		for (d=0; d < (ar - z); ++d)
+			if (a[d] > a[d+1])
+			{
+        elem = a[d];
+				a[d] = a[d+1];
+        a[d+1] = elem;
+			}
+	}
+	
+	cout << "Array after bubble sort:";
+	for (z=0; z < ar; ++z)
+		cout << " " << a[z];
+	getch();
+	return 0;
+  }
